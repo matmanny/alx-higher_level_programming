@@ -1,7 +1,11 @@
 #!/usr/bin/python3
 def add_tuple(tuple_a=(), tuple_b=()):
-    new_tuple = ()
-    tuple_1 = tuple_a + (0, 0)
-    tuple_2 = tuple_b + (0, 0)
-    new_tuple = tuple_1[0] + tuple_2[0], tuple_1[1] + tuple_2[1]
-    return 
+    y = ()
+    for x in (tuple_a, tuple_b):
+        if len(x) == 0:
+            x = (0, 0)
+        elif len(x) == 1:
+            x = (x[0], 0)
+        if y == ():
+            y = x
+    return x[0] + y[0], x[1] + y[1] 
